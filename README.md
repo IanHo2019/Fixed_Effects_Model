@@ -36,6 +36,8 @@ The data I use are from the freely available [World Development Indicators](http
     * Labor force, total
   * **Time:** Years from 2000 to 2021.
 
+**Note:** The default format of WDI data file is not (directly) suitable for panel data analysis. I recommend to customize the layout of data format on the WDI webpage before downloading the data; otherwise, you may spend some time reshaping the dataset to a panel. A good guideline for downloading WDI is in slide 21 of Professor Oscar Torres-Reyna's "*Finding Data*" ([here](https://www.princeton.edu/~otorres/FindingData101.pdf)).
+
 In the dataset cleaning and construction process,
   1. Observations are dropped if information on any of the four country-level variables is missing.
   1. After step 1, if a country has only one observation, then it is dropped as well.
@@ -43,7 +45,13 @@ In the dataset cleaning and construction process,
   1. I generate a new variable, named `trade`, by summation of `export` and `import`.
   1. Finally, `gdppc`, `labor`, and `trade` are log transformed.
 
-The complete coding can be found here.
+The complete coding can be found [here](./Dataset_Construction.do).
 
 ## Three Kingdoms! `xtreg`, `areg`, and `reghdfe`!
-The complete coding can be found here.
+There are four important differences among these three commands:
+  * Vanriance-covariance matrix estimation is different; in particular, the degree-of-freedom adjustments are different.
+  * $R^2$'s are calculated in different ways.
+  * The options for adding fixed effects are different.
+  * Computation speeds are different. As Sergio Correia (the author of the `reghdfe` package) claimed, even with only one level of fixed effects, `reghdfe` is faster than `xtreg` and `areg`. I first tried the `reghdfe` package in 2021, when I was working on my graduation dissertation for Master degree. My comment is: Good!
+
+The complete coding for running FE models can be found [here](./Fixed_Effects_Models.do).
