@@ -21,7 +21,7 @@ drop TimeCode CountryName
 
 rename Time year
 rename CountryCode country
-rename GDPconstant2015USNYGDP gdppc
+rename GDPpercapitaconstant2015US gdppc
 rename Exportsofgoodsandservicesc export
 rename Importsofgoodsandservicesc import
 rename LaborforcetotalSLTLFTOTL labor
@@ -38,14 +38,7 @@ duplicates tag country, gen(tag)
 drop if tag==0
 drop tag
 
-
-* Change the unit
-local varlist = "gdppc export import"
-foreach v in `varlist' {
-	replace `v' = `v'/10^9
-}
-replace labor = labor/10^3
-
+* Define "trade" as a summation of import and export
 gen trade = import + export
 
 
@@ -62,12 +55,11 @@ xtsum gdppc trade labor
 * See the heterogeneity across countries and years
 bysort year: egen gdppc_mean = mean(gdppc)
 
-twoway (scatter gdppc year if country!="USA", msymbol(circle_hollow) color(gs14)) ///
-	(connected gdppc_mean year if country!="USA", sort msymbol(diamond)), ///
+twoway (scatter gdppc year, msymbol(circle_hollow) color(gs14)) ///
+	(connected gdppc_mean year, sort msymbol(diamond)), ///
 	ylabel(, angle(0) labsize(2) format(%6.0fc)) ///
 	xlabel(2000/2021, angle(45) labsize(2) grid) ///
 	title("GDP per capita (constant 2015 USD)") xtitle("Year", size(2.5)) ///
-	subtitle("Unit: Billion", size(2.5) position(11)) ///
 	legend(label(1 "GDP pc per country") label(2 "Mean of GDP pc per year")) ///
 	plotregion(fcolor(white) lcolor(white)) ///
 	graphregion(fcolor(white) lcolor(white))
