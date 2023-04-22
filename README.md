@@ -42,7 +42,6 @@ The data I use are from the freely available [World Development Indicators](http
 In the dataset cleaning and construction process,
   1. Observations are dropped if information on any of the four country-level variables is missing.
   1. After step 1, if a country has only one observation, then it is dropped as well.
-  1. For better reporting in figures, I change the unit of `gdppc`, `export`, and `import` to billion US dollars and change the unit of `labor` to thousand.
   1. I generate a new variable, named `trade`, by summation of `export` and `import`.
   1. Finally, `gdppc`, `labor`, and `trade` are log transformed.
 
