@@ -47,11 +47,11 @@ In the dataset cleaning and construction process,
 
 The complete coding can be found [here](./Dataset_Construction.do).
 
-## Three Kingdoms! `xtreg`, `areg`, and `reghdfe`!
+## [Three Kingdoms](https://en.wikipedia.org/wiki/Three_Kingdoms)! `xtreg`, `areg`, and `reghdfe`!
 There are four important differences among these three commands:
   * Vanriance-covariance matrix estimation is different; in particular, the degree-of-freedom adjustments are different.
   * $R^2$'s are calculated in different ways.
   * The options for adding fixed effects are different.
-  * Computation speeds are different. As Sergio Correia (the author of the `reghdfe` package) claimed, even with only one level of fixed effects, `reghdfe` is faster than `xtreg` and `areg`. I first tried the `reghdfe` package in 2021, when I was working on my graduation dissertation for Master degree. My comment is: Good!
+  * Computation speeds are different. As [Sergio Correia](http://scorreia.com/) (the author of the `reghdfe` package) claimed, even with only one level of fixed effects, `reghdfe` is faster than `xtreg` and `areg`. I first tried the `reghdfe` package in 2021, when I was working on my graduation dissertation for Master degree. My comment is: Good!
 
 The complete coding for running FE models can be found [here](./Fixed_Effects_Models.do).
