@@ -23,16 +23,17 @@ The key difference between FE models and random effects (RE) models is
   * In a RE model, we make three assumptions on $u_i$:
     * $E(u_i|\mathbf{X}_i) = 0$;
     * $E(u_i^2|\mathbf{X}_i) = \sigma_u^2$;
-    * $E(u_i \varepsilon|\mathbf{X}_i) = 0$, where $\mathbf{X}_i$ is a $T_i \times k$ matrix of $X_{it}'$ and $T_i$ is the number of periods observed for individual $i$.
+    * $E(u_i\varepsilon_{it}|\mathbf{X}_i)=0$.
 
+See Chapter 17 in Bruce Hansen's *[Econometrics](https://press.princeton.edu/books/hardcover/9780691235899/econometrics)* for details.
 
 ## Data
 The data I use are from the freely available [World Development Indicators](https://databank.worldbank.org/source/world-development-indicators) (WDI) provided by The World Bank. My data selection is:
-  * **Country:** All 217 countries. Note that the WDI also constains data for regions (such as East Asia & Pacific); if you include them in your dataset by mistake, then you have to drop them manually or with the help of some statistical softwares.
+  * **Country:** All 217 countries. Note that the WDI also constains data for regions (such as East Asia \& Pacific); if you include them in your dataset by mistake, then you have to drop them manually or with the help of some statistical softwares.
   * **Series:** Four variables, including
-    * GDP per capita (constant 2015 US$)
-    * Exports of goods and services (constant 2015 US$)
-    * Imports of goods and services (constant 2015 US$)
+    * GDP per capita (constant 2015 US\$)
+    * Exports of goods and services (constant 2015 US\$)
+    * Imports of goods and services (constant 2015 US\$)
     * Labor force, total
   * **Time:** Years from 2000 to 2021.
 
