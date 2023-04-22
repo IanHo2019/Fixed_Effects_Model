@@ -65,7 +65,7 @@ estout xtreg1 areg1 hdreg1 xtreg2 areg2 hdreg2 using "$tabdir\compare_reg_comman
 	postfoot("\hline\hline" "\end{tabular}") replace
 
 
-	*************************************************************************
+*************************************************************************
 **# Is time FE a good ingredient for our lunch?
 use "$dtadir\WDI21.dta", clear
 
