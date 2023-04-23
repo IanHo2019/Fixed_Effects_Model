@@ -47,6 +47,15 @@ In the dataset cleaning and construction process,
 
 The complete coding can be found [here](./Dataset_Construction.do).
 
+
+## Summary Statistics
+After setting a panel, we can use the `xtsum` command to see the means, standard deviations, minima, maxima, and number of observations for the data. This command differs from the famous `sum` command because it by default decomposes the standard deviations, minima, and maxima into between and within components. A between is a time-average, individual spesific mean, and a within is the variable $X_{it}$ minus its time average plus its globle mean. See its [documentation](https://www.stata.com/manuals/xtxtsum.pdf) for details.
+
+In addition, I create a scatter plot for seeing the heterogeneity of GDP per capita across years. As [it](./Figure/GDPpc_heterogeneity.pdf) shows, the mean value does not show an evident change in the 22-year window.
+
+Finally, I compare the distributions of the levels and the natural logarithms of three country-level variables. From the [figure](./Figure/variable_distribution.pdf), we can easily understand why log transformation is so important in some cases.
+
+
 ## [Three Kingdoms](https://en.wikipedia.org/wiki/Three_Kingdoms)! `xtreg`, `areg`, and `reghdfe`!
 There are four important differences among these three commands:
   * Vanriance-covariance matrix estimation is different; in particular, the degree-of-freedom adjustments are different.
