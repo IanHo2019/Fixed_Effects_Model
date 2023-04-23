@@ -57,7 +57,7 @@ bysort year: egen gdppc_mean = mean(gdppc)
 
 twoway (scatter gdppc year, msymbol(circle_hollow) color(gs14)) ///
 	(connected gdppc_mean year, sort msymbol(diamond)), ///
-	ylabel(, angle(0) labsize(2) format(%6.0fc)) ///
+	ylabel(, angle(0) labsize(2) format(%9.0fc)) ///
 	xlabel(2000/2021, angle(45) labsize(2) grid) ///
 	title("GDP per capita (constant 2015 USD)") xtitle("Year", size(2.5)) ///
 	legend(label(1 "GDP pc per country") label(2 "Mean of GDP pc per year")) ///
