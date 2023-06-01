@@ -1,6 +1,5 @@
 * This do file uses various commands to run fixed effects models. The data used is extracted from World Development Indicators (2000-2021).
 * Author: Ian He
-* Institution: The University of Oklahoma
 * Date: Apr 22, 2023
 *************************************************************************
 
