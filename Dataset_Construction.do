@@ -1,6 +1,5 @@
 * This do file constructs a panel dataset with data from World Development Indicators (2000-2021) and does summary satistics.
 * Author: Ian He
-* Institution: The University of Oklahoma
 * Date: Apr 22, 2023
 *************************************************************************
 
